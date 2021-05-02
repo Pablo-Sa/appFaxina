@@ -5,9 +5,9 @@ public enum TypeUserProfile {
     MAID(1),
     HOUSE_OWNER(2);
 
-    private int codigo;
+    private int code;
 
-    TypeUserProfile(int valorCodigo) {
-        this.codigo = codigo;
+    TypeUserProfile(int valueCode) {
+        this.code = valueCode;
     }
 }

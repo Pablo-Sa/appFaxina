@@ -15,5 +15,6 @@ abstract public class AbstractPersonEntity {
     private Address address;
     private String cpf;
     private String sex;
+    private String profileFacebook;
     private TypeUserProfile typeUserProfile;
 }
