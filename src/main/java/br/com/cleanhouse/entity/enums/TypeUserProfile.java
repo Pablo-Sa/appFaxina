@@ -2,8 +2,8 @@ package br.com.cleanhouse.entity.enums;
 
 public enum TypeUserProfile {
 
-    MAID(1),
-    HOUSE_OWNER(2);
+    MAID(0),
+    HOUSE_OWNER(1);
 
     private int code;
 
