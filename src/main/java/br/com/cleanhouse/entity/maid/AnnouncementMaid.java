@@ -1,7 +1,7 @@
 package br.com.cleanhouse.entity.maid;
 
 import br.com.cleanhouse.entity.enums.DaysOfWeekAvailable;
-import br.com.cleanhouse.entity.enums.PaymentsAccepted;
+import br.com.cleanhouse.entity.enums.AcceptedPayments;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,7 +13,7 @@ import java.util.List;
 @ToString
 public class AnnouncementMaid {
     private List<DaysOfWeekAvailable> availabeSchedule;
-    private List<PaymentsAccepted> paymentsAccepteds;
+    private List<AcceptedPayments> acceptedPayments;
     private boolean locomotionPaidOfClient;
     private String comments;
 }
