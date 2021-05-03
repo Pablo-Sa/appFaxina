@@ -1,6 +1,6 @@
 package br.com.cleanhouse.entity.enums;
 
-public enum AcceptedPayments {
+public enum AcceptedPaymentsEnum {
     CREDIT_CARD(1),
     DEBIT_CARD(2),
     IN_CASH(3),
@@ -10,7 +10,7 @@ public enum AcceptedPayments {
 
     private Integer code;
 
-    AcceptedPayments(Integer codeValue){
+    AcceptedPaymentsEnum(Integer codeValue){
         this.code = codeValue;
     }
 }

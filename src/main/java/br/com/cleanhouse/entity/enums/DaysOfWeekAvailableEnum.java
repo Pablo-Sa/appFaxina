@@ -1,6 +1,6 @@
 package br.com.cleanhouse.entity.enums;
 
-public enum DaysOfWeekAvailable {
+public enum DaysOfWeekAvailableEnum {
 
     MONDAY(1),
     TUESDAY(2),
@@ -11,7 +11,7 @@ public enum DaysOfWeekAvailable {
     SUNDAY(7);
 
     private int codeOfDay;
-    DaysOfWeekAvailable(int codeValue) {
+    DaysOfWeekAvailableEnum(int codeValue) {
         this.codeOfDay = codeValue;
     }
 }

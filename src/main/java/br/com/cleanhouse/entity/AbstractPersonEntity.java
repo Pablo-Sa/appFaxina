@@ -1,6 +1,6 @@
 package br.com.cleanhouse.entity;
 
-import br.com.cleanhouse.entity.enums.TypeUserProfile;
+import br.com.cleanhouse.entity.enums.TypeUserProfileEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,5 +16,5 @@ abstract public class AbstractPersonEntity {
     private String cpf;
     private String sex;
     private String profileFacebook;
-    private TypeUserProfile typeUserProfile;
+    private TypeUserProfileEnum typeUserProfileEnum;
 }
