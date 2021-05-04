@@ -10,11 +10,14 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import lombok.extern.slf4j.Slf4j;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestControllerAdvice
+@Slf4j
 public class ErrorValidationHandler {
 
     @Autowired
@@ -30,6 +33,7 @@ public class ErrorValidationHandler {
         fieldErrors.forEach(e ->{
             String message = messageSource.getMessage(e, LocaleContextHolder.getLocale());
             ErrorPostExceptionDto error = new ErrorPostExceptionDto(e.getField(), message);
+            log.error("Erro Encontrado na Validação do campo: "+ e.getField() + message);
             dto.add(error);
         });
 

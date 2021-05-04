@@ -1,4 +1,4 @@
-package br.com.cleanhouse.exception.custombeansvalidations;
+package br.com.cleanhouse.config.custombeansvalidations;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -1,4 +1,4 @@
-package br.com.cleanhouse.exception.custombeansvalidations;
+package br.com.cleanhouse.config.custombeansvalidations;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
