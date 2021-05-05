@@ -21,11 +21,9 @@ public class UserRegistrationResource {
     @ApiOperation(value = "EndPoint Destinado a Cadastro de Novos Usuários no App")
     @PostMapping("/registration")
     public ResponseEntity<UserProfile> userRegistration(@RequestBody @Valid UserProfile user) {
-
             this.dynamoService.createTableIfNotExists();
             this.dynamoService.describeTable();
             this.dynamoService.createNewItem(user);
-
         return new ResponseEntity<>(user,HttpStatus.OK);
     }
 }

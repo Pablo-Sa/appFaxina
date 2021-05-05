@@ -27,17 +27,24 @@ public class ErrorValidationHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public List<ErrorPostExceptionDto> handle(MethodArgumentNotValidException exception) {
         List<ErrorPostExceptionDto> dto = new ArrayList<>();
-
         List<FieldError> fieldErrors = exception.getBindingResult().getFieldErrors();
-
         fieldErrors.forEach(e ->{
             String message = messageSource.getMessage(e, LocaleContextHolder.getLocale());
             ErrorPostExceptionDto error = new ErrorPostExceptionDto(e.getField(), message);
             log.error("Erro Encontrado na Validação do campo: "+ e.getField() + message);
             dto.add(error);
         });
-
         return dto;
     }
 
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(AlwaysExistsUserInDataBaseException.class)
+    public List<ErrorPostExceptionDto> handle(AlwaysExistsUserInDataBaseException exception) {
+        List<ErrorPostExceptionDto> dto = new ArrayList<>();
+        String fieldError = exception.getMessage();
+        ErrorPostExceptionDto error = new ErrorPostExceptionDto("Error", fieldError);
+        log.error("Erro Encontrado na Validação do campo: {} ", error.getField() , error.getError());
+        dto.add(error);
+        return dto;
+    }
 }
