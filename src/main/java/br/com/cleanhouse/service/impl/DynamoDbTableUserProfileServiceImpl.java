@@ -1,7 +1,7 @@
 package br.com.cleanhouse.service.impl;
 
-import br.com.cleanhouse.config.dynamodb.DynamoDBConfig;
-import br.com.cleanhouse.entity.UserProfile;
+import br.com.cleanhouse.infra.database.dynamodb.DynamoDBConfig;
+import br.com.cleanhouse.core.entity.UserProfile;
 import br.com.cleanhouse.exception.AlwaysExistsUserInDataBaseException;
 import br.com.cleanhouse.service.DynamoDbTableUserProfileService;
 import com.amazonaws.services.dynamodbv2.document.Table;
@@ -51,7 +51,7 @@ public class DynamoDbTableUserProfileServiceImpl implements DynamoDbTableUserPro
             log.info("Insert Sucessed: {}",putItemResult);
         }catch (AlwaysExistsUserInDataBaseException exception){
             log.error("Insert Failed, Item Aways Exist: {}",exception);
-            throw new AlwaysExistsUserInDataBaseException("User Always Exists In DataBase");
+            throw new AlwaysExistsUserInDataBaseException("User Already Exists In DataBase");
         }
     }
 
@@ -83,7 +83,7 @@ public class DynamoDbTableUserProfileServiceImpl implements DynamoDbTableUserPro
         String foundUser = this.getItem(userProfile);
         log.info("Verify User Always Exists In DataBase: {}", foundUser);
         if(foundUser != null){
-            throw new AlwaysExistsUserInDataBaseException("User Always Exists In DataBase");
+            throw new AlwaysExistsUserInDataBaseException("User Already Exists In DataBase");
         }
     }
 }

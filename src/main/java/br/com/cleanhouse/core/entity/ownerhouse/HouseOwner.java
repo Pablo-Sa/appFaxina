@@ -1,6 +1,6 @@
-package br.com.cleanhouse.entity.ownerhouse;
+package br.com.cleanhouse.core.entity.ownerhouse;
 
-import br.com.cleanhouse.entity.AbstractPersonEntity;
+import br.com.cleanhouse.core.entity.AbstractPersonEntity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

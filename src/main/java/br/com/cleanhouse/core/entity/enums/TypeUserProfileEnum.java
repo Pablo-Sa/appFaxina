@@ -1,4 +1,4 @@
-package br.com.cleanhouse.entity.enums;
+package br.com.cleanhouse.core.entity.enums;
 
 public enum TypeUserProfileEnum {
 

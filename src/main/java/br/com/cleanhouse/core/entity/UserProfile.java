@@ -1,7 +1,7 @@
-package br.com.cleanhouse.entity;
+package br.com.cleanhouse.core.entity;
 
-import br.com.cleanhouse.entity.enums.TypeUserProfileEnum;
-import br.com.cleanhouse.config.custombeansvalidations.Enum;
+import br.com.cleanhouse.core.entity.enums.TypeUserProfileEnum;
+import br.com.cleanhouse.core.usecase.custombeansvalidations.Enum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

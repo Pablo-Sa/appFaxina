@@ -1,4 +1,4 @@
-package br.com.cleanhouse.config.dynamodb;
+package br.com.cleanhouse.infra.database.dynamodb;
 
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
@@ -13,7 +13,7 @@ public class DynamoDBConfig {
 
     public static AmazonDynamoDB amazonDynamoDB() {
         return AmazonDynamoDBClientBuilder.standard().withEndpointConfiguration(
-                new AwsClientBuilder.EndpointConfiguration(ENDPOINT,REGION ))
+                new AwsClientBuilder.EndpointConfiguration(ENDPOINT,REGION))
                 .build();
     }
 

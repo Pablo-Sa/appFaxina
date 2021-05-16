@@ -1,7 +1,7 @@
-package br.com.cleanhouse.entity.maid;
+package br.com.cleanhouse.core.entity.maid;
 
-import br.com.cleanhouse.entity.enums.DaysOfWeekAvailableEnum;
-import br.com.cleanhouse.entity.enums.AcceptedPaymentsEnum;
+import br.com.cleanhouse.core.entity.enums.DaysOfWeekAvailableEnum;
+import br.com.cleanhouse.core.entity.enums.AcceptedPaymentsEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

@@ -1,6 +1,6 @@
-package br.com.cleanhouse.entity.ownerhouse;
+package br.com.cleanhouse.core.entity.ownerhouse;
 
-import br.com.cleanhouse.entity.enums.DaysOfWeekAvailableEnum;
+import br.com.cleanhouse.core.entity.enums.DaysOfWeekAvailableEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

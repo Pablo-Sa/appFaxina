@@ -1,6 +1,6 @@
-package br.com.cleanhouse.resources;
+package br.com.cleanhouse.controller;
 
-import br.com.cleanhouse.entity.UserProfile;
+import br.com.cleanhouse.core.entity.UserProfile;
 import br.com.cleanhouse.service.DynamoDbTableUserProfileService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ import javax.validation.Valid;
 @RequestMapping("/user")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class UserRegistrationResource {
+public class UserRegistrationController {
 
     private final DynamoDbTableUserProfileService dynamoService;
 

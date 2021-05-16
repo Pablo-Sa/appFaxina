@@ -1,4 +1,4 @@
-package br.com.cleanhouse.entity;
+package br.com.cleanhouse.core.entity;
 
 import lombok.Getter;
 import lombok.Setter;

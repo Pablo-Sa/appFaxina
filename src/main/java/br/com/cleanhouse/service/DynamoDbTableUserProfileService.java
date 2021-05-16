@@ -1,6 +1,6 @@
 package br.com.cleanhouse.service;
 
-import br.com.cleanhouse.entity.UserProfile;
+import br.com.cleanhouse.core.entity.UserProfile;
 
 public interface DynamoDbTableUserProfileService {
 
