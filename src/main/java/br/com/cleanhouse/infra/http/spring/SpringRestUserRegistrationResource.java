@@ -1,7 +1,8 @@
-package br.com.cleanhouse.controller;
+package br.com.cleanhouse.infra.http.spring;
 
+import br.com.cleanhouse.adapter.SpringRestAdapter;
+import br.com.cleanhouse.controller.UserProfileControllerImpl;
 import br.com.cleanhouse.core.entity.UserProfile;
-import br.com.cleanhouse.service.DynamoDbTableUserProfileService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,16 +15,13 @@ import javax.validation.Valid;
 @RequestMapping("/user")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class UserRegistrationController {
-
-    private final DynamoDbTableUserProfileService dynamoService;
+public class SpringRestUserRegistrationResource {
 
     @ApiOperation(value = "EndPoint Destinado a Cadastro de Novos Usuários no App")
     @PostMapping("/registration")
     public ResponseEntity<UserProfile> userRegistration(@RequestBody @Valid UserProfile user) {
-            this.dynamoService.createTableIfNotExists();
-            this.dynamoService.describeTable();
-            this.dynamoService.createNewItem(user);
+        SpringRestAdapter.create(user,new UserProfileControllerImpl());
         return new ResponseEntity<>(user,HttpStatus.OK);
     }
+
 }

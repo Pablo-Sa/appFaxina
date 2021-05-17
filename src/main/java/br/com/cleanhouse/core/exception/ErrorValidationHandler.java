@@ -1,6 +1,6 @@
-package br.com.cleanhouse.exception;
+package br.com.cleanhouse.core.exception;
 
-import br.com.cleanhouse.infra.http.dto.ErrorPostExceptionDto;
+import br.com.cleanhouse.infra.http.spring.dto.ErrorPostExceptionDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -38,8 +38,8 @@ public class ErrorValidationHandler {
     }
 
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(AlwaysExistsUserInDataBaseException.class)
-    public List<ErrorPostExceptionDto> handle(AlwaysExistsUserInDataBaseException exception) {
+    @ExceptionHandler(AlreadyExistsUserInDataBaseException.class)
+    public List<ErrorPostExceptionDto> handle(AlreadyExistsUserInDataBaseException exception) {
         List<ErrorPostExceptionDto> dto = new ArrayList<>();
         String fieldError = exception.getMessage();
         ErrorPostExceptionDto error = new ErrorPostExceptionDto("Error", fieldError);

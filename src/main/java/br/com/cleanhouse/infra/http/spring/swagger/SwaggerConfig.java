@@ -1,4 +1,4 @@
-package br.com.cleanhouse.infra.http.swagger;
+package br.com.cleanhouse.infra.http.spring.swagger;
 
 import java.util.ArrayList;
 

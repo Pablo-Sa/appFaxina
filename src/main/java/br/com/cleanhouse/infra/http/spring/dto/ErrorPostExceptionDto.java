@@ -1,4 +1,4 @@
-package br.com.cleanhouse.infra.http.dto;
+package br.com.cleanhouse.infra.http.spring.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
