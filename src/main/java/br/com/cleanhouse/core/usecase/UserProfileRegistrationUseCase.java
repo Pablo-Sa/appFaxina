@@ -11,15 +11,6 @@ public class UserProfileRegistrationUseCase {
     private final UserProfileRepository userProfileRepository;
 
     public void registerUser(String login, String password, String email, String typeProfile) throws AlreadyExistsUserInDataBaseException{
-            this.verifyExistsUser(login,typeProfile);
             this.userProfileRepository.registrationUserProfile(login,password,email,typeProfile);
-    }
-
-    private void verifyExistsUser(String login, String typeProfile){
-        String foundUser = this.userProfileRepository.verifyExistsUserProfile(login,typeProfile);
-        log.info("Verify User Already Exists In DataBase: {}", foundUser);
-        if(foundUser != null){
-            throw new AlreadyExistsUserInDataBaseException("User Already Exists In DataBase");
-        }
     }
 }

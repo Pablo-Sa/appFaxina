@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @ToString
-public class UserProfile extends AbstractPersonEntity{
+public class UserProfileEntity extends AbstractPersonEntity{
 
     @NotBlank
     private String login;
