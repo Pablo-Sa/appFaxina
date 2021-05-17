@@ -5,7 +5,6 @@ import br.com.cleanhouse.controller.UserProfileControllerImpl;
 import br.com.cleanhouse.core.entity.UserProfile;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +19,7 @@ public class SpringRestUserRegistrationResource {
     @ApiOperation(value = "EndPoint Destinado a Cadastro de Novos Usuários no App")
     @PostMapping("/registration")
     public ResponseEntity<UserProfile> userRegistration(@RequestBody @Valid UserProfile user) {
-        SpringRestAdapter.create(user,new UserProfileControllerImpl());
-        return new ResponseEntity<>(user,HttpStatus.OK);
+        return SpringRestAdapter.create(user,new UserProfileControllerImpl());
     }
 
 }
