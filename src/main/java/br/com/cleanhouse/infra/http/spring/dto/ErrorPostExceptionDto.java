@@ -8,8 +8,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class ErrorPostExceptionDto {
-
     private String field;
     private String error;
-
 }

@@ -1,5 +1,6 @@
-package br.com.cleanhouse.core.exception;
+package br.com.cleanhouse.infra.http.spring.errorshandler;
 
+import br.com.cleanhouse.core.exception.AlreadyExistsUserInDataBaseException;
 import br.com.cleanhouse.infra.http.spring.dto.ErrorPostExceptionDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

@@ -7,6 +7,6 @@ import org.springframework.http.ResponseEntity;
 public class SpringRestAdapter {
     public static <T> ResponseEntity<T> create(T value, UserProfileController<T> method){
         method.execute(value);
-        return new ResponseEntity<>(value, HttpStatus.OK);
+        return new ResponseEntity<>(value, HttpStatus.CREATED);
     }
 }

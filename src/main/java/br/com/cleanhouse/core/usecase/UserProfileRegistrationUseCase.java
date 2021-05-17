@@ -10,14 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 public class UserProfileRegistrationUseCase {
     private final UserProfileRepository userProfileRepository;
 
-    public void execute(String login, String password, String email, String typeProfile){
-        try {
+    public void registerUser(String login, String password, String email, String typeProfile) throws AlreadyExistsUserInDataBaseException{
             this.verifyExistsUser(login,typeProfile);
             this.userProfileRepository.registrationUserProfile(login,password,email,typeProfile);
-        }catch (AlreadyExistsUserInDataBaseException exception){
-            log.error("Insert Failed, User Aways Exist: {}",exception);
-            throw new AlreadyExistsUserInDataBaseException("User Already Exists In DataBase");
-        }
     }
 
     private void verifyExistsUser(String login, String typeProfile){

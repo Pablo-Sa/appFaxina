@@ -1,4 +1,4 @@
-package br.com.cleanhouse.infra.database.dynamodb;
+package br.com.cleanhouse.infra.database.dynamodb.config;
 
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
