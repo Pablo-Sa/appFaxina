@@ -1,4 +1,4 @@
-package br.com.cleanhouse.infra.http.spring;
+package br.com.cleanhouse.infra.http.spring.resources;
 
 import br.com.cleanhouse.adapter.AdapterSpringRest;
 import br.com.cleanhouse.controller.UserProfileControllerImpl;

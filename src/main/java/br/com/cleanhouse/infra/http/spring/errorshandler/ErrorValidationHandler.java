@@ -21,8 +21,12 @@ import java.util.List;
 @Slf4j
 public class ErrorValidationHandler {
 
-    @Autowired
     private MessageSource messageSource;
+
+    @Autowired
+    public ErrorValidationHandler(MessageSource messageSource){
+        this.messageSource = messageSource;
+    }
 
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)

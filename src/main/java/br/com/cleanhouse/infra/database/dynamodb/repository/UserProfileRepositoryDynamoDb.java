@@ -20,7 +20,7 @@ public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
     private static final String PARTITION_KEY = "login";
     private static final String SORT_KEY = "typeProfile";
 
-    public void registrationUserProfile(String login, String password, String email, String typeProfile) throws AlreadyExistsUserInDataBaseException{
+    public void registrationUserProfile(String login, String password, String email, String typeProfile) {
         log.info("Verify User Already Exists In DataBase: {}");
         this.verifyExistsUserProfile(login,typeProfile);
         Map<String, AttributeValue> newItemInTableUserProfile = new HashMap<String, AttributeValue>();
