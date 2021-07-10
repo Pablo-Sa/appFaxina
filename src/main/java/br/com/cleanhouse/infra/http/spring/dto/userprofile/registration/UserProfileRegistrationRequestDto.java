@@ -1,4 +1,4 @@
-package br.com.cleanhouse.infra.http.spring.dto;
+package br.com.cleanhouse.infra.http.spring.dto.userprofile.registration;
 
 import br.com.cleanhouse.core.custombeansvalidations.Enum;
 import br.com.cleanhouse.core.entity.enums.TypeUserProfileEnum;
@@ -12,7 +12,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @ToString
-public class UserProfileRequestDto {
+public class UserProfileRegistrationRequestDto {
     @NotBlank
     private String login;
 
