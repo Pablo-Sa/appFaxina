@@ -8,14 +8,13 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/registration")
+@RequestMapping("/autentication")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class SpringRestUserRegistrationResource {
+public class SpringRestUserAutenticationResource {
 
     @ApiOperation(value = "EndPoint Destinado a Cadastro de Novos Usuários no App")
     @PostMapping

@@ -36,7 +36,8 @@ public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
     private void verifyExistsUserProfile(String login, String typeProfile) {
         Table table = DynamoDBConfig.dynamoDB().getTable(TABLE_NAME);
         GetItemSpec spec = new GetItemSpec()
-                .withPrimaryKey(PARTITION_KEY, login,SORT_KEY,typeProfile);
+                .withPrimaryKey(PARTITION_KEY, login,SORT_KEY,typeProfile)
+                .withProjectionExpression(PARTITION_KEY);
         try {
             String jsonItem = table.getItem(spec).toJSONPretty();
             log.info("Verify Item Exists In DataBase: {}",jsonItem);
