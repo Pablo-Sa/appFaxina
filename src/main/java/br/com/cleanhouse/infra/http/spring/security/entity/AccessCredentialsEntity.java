@@ -1,4 +1,4 @@
-package br.com.cleanhouse.infra.http.spring.security;
+package br.com.cleanhouse.infra.http.spring.security.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,15 +10,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-//Classe Responsável por Dizer qual é o Usuário do Sistema Vinculado a Segurança
 @Getter
 @Setter
 @NoArgsConstructor
-public class AccessCredentials implements UserDetails {
+public class AccessCredentialsEntity implements UserDetails {
 
+    private String id;
     private String login;
     private String passwd;
-    private List<Profiles> profiles = new ArrayList<>();
+    private List<ProfilesEntity> profiles = new ArrayList<>();
 
 
     public Collection<? extends GrantedAuthority> getAuthorities() {

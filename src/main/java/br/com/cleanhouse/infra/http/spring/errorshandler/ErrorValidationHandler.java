@@ -2,7 +2,8 @@ package br.com.cleanhouse.infra.http.spring.errorshandler;
 
 import br.com.cleanhouse.core.exception.AlreadyExistsUserInDataBaseException;
 import br.com.cleanhouse.infra.http.spring.dto.ErrorPostExceptionDto;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
@@ -11,22 +12,16 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import lombok.extern.slf4j.Slf4j;
-
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestControllerAdvice
 @Slf4j
+@RequiredArgsConstructor
 public class ErrorValidationHandler {
 
-    private MessageSource messageSource;
-
-    @Autowired
-    public ErrorValidationHandler(MessageSource messageSource){
-        this.messageSource = messageSource;
-    }
+    private final MessageSource messageSource;
 
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)

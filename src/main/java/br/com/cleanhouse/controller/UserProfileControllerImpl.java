@@ -8,6 +8,7 @@ public class UserProfileControllerImpl implements UserProfileController<UserProf
 
     private UserProfileRegistrationUseCase userProfileRegistrationUseCase =
             new UserProfileRegistrationUseCase(new UserProfileRepositoryDynamoDb());
+
     public void execute(UserProfileRegistrationRequestDto request) {
         this.userProfileRegistrationUseCase.registerUser(request.getLogin(),request.getPassword(),request.getEmail(),request.getTypeProfile());
    }

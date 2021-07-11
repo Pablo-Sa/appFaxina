@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Slf4j
 public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
@@ -27,6 +28,7 @@ public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
         newItemInTableUserProfile.put("login", new AttributeValue(login));
         newItemInTableUserProfile.put("password", new AttributeValue(password));
         newItemInTableUserProfile.put("email", new AttributeValue(email));
+        newItemInTableUserProfile.put("id", new AttributeValue(UUID.randomUUID().toString()));
         newItemInTableUserProfile.put("typeProfile", new AttributeValue(typeProfile));
         PutItemRequest putItemRequest = new PutItemRequest(TABLE_NAME, newItemInTableUserProfile);
         PutItemResult putItemResult = DynamoDBConfig.amazonDynamoDB().putItem(putItemRequest);

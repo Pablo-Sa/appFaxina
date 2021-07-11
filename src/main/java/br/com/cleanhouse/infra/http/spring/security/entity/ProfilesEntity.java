@@ -1,13 +1,14 @@
-package br.com.cleanhouse.infra.http.spring.security;
+package br.com.cleanhouse.infra.http.spring.security.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
 @Getter
 @Setter
-//Classe responsável pelos perfils de usuário
-public class Profiles implements GrantedAuthority {
+@NoArgsConstructor
+public class ProfilesEntity implements GrantedAuthority {
 
     private String name;
 

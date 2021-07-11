@@ -1,5 +1,6 @@
-package br.com.cleanhouse.infra.http.spring.security;
+package br.com.cleanhouse.infra.http.spring.security.service;
 
+import br.com.cleanhouse.infra.http.spring.security.entity.AccessCredentialsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,7 +16,7 @@ public class AutenticationService implements UserDetailsService {
     private AccessCredentialsService accessCredentialsService;
 
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-        Optional<AccessCredentials> user = this.accessCredentialsService.findByLogin(login);
+        Optional<AccessCredentialsEntity> user = this.accessCredentialsService.findByLogin(login);
         if(user.isPresent()) {
             return user.get();
         }

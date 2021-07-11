@@ -1,5 +1,8 @@
-package br.com.cleanhouse.infra.http.spring.security;
+package br.com.cleanhouse.infra.http.spring.security.config;
 
+import br.com.cleanhouse.infra.http.spring.security.service.AccessCredentialsService;
+import br.com.cleanhouse.infra.http.spring.security.service.AutenticationService;
+import br.com.cleanhouse.infra.http.spring.security.service.TokenService;
 import com.google.common.collect.ImmutableList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -23,6 +27,12 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private AutenticationService autenticationService;
+
+    @Autowired
+    private TokenService tokenService;
+
+    @Autowired
+    private AccessCredentialsService accessCredentialsService;
 
     @Bean
     protected AuthenticationManager authenticationManager() throws Exception {
@@ -43,7 +53,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .and()
                 .headers()
                 .frameOptions().sameOrigin().and().authorizeRequests().and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .addFilterBefore(new AutenticationTokenFilter(this.tokenService, this.accessCredentialsService), UsernamePasswordAuthenticationFilter.class);;
     }
 
     @Bean

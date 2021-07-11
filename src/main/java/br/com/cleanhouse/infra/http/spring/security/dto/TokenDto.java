@@ -1,4 +1,4 @@
-package br.com.cleanhouse.infra.http.spring.dto.token;
+package br.com.cleanhouse.infra.http.spring.security.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
