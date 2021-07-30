@@ -2,4 +2,5 @@ package br.com.cleanhouse.core.repository;
 
 public interface UserProfileRepository {
     void registrationUserProfile(String login, String password, String email, String typeProfile);
+    void autenticationUserProfile(String login, String password);
 }

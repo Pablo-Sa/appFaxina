@@ -3,16 +3,19 @@ package br.com.cleanhouse.infra.http.spring.dto.userprofile.autentication;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
 public class UserProfileAutenticationRequestDto {
 
+    @NotBlank
     private String login;
+
+    @NotBlank
     private String password;
 
     public UsernamePasswordAuthenticationToken converter() {

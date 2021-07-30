@@ -35,6 +35,10 @@ public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
         log.info("Insert Sucessed: {}", putItemResult);
     }
 
+    public void autenticationUserProfile(String login, String password) {
+
+    }
+
     private void verifyExistsUserProfile(String login, String typeProfile) {
         Table table = DynamoDBConfig.dynamoDB().getTable(TABLE_NAME);
         GetItemSpec spec = new GetItemSpec()
