@@ -1,5 +1,6 @@
 br\com\cleanhouse\core\usecase\UserProfileRegistrationUseCase.class
 br\com\cleanhouse\infra\http\spring\dto\ErrorPostExceptionDto.class
+br\com\cleanhouse\controller\autentication\UserAutenticationProfileControllerImpl.class
 br\com\cleanhouse\core\entity\UserProfileEntity.class
 br\com\cleanhouse\core\entity\maid\Maid.class
 br\com\cleanhouse\core\custombeansvalidations\Enum.class
@@ -7,18 +8,21 @@ br\com\cleanhouse\infra\http\spring\security\service\TokenService.class
 br\com\cleanhouse\core\entity\Address.class
 br\com\cleanhouse\infra\http\spring\security\config\SecurityConfigurations.class
 br\com\cleanhouse\core\exception\AlreadyExistsUserInDataBaseException.class
+br\com\cleanhouse\controller\create\UserCreateProfileControllerImpl.class
+br\com\cleanhouse\core\usecase\UserProfileAutenticationUseCase.class
 br\com\cleanhouse\adapter\AdapterSpringRest.class
 br\com\cleanhouse\infra\database\dynamodb\repository\UserProfileRepositoryDynamoDb.class
 br\com\cleanhouse\infra\http\spring\resources\SpringRestUserRegistrationResource.class
-br\com\cleanhouse\controller\UserProfileController.class
 br\com\cleanhouse\infra\http\spring\dto\userprofile\autentication\UserProfileAutenticationRequestDto.class
 br\com\cleanhouse\infra\http\spring\security\entity\ProfilesEntity.class
+br\com\cleanhouse\controller\autentication\UserAutenticationProfileController.class
 br\com\cleanhouse\core\entity\AbstractPersonEntity.class
 br\com\cleanhouse\infra\http\spring\dto\userprofile\registration\UserProfileRegistrationResponseDto.class
 br\com\cleanhouse\infra\http\spring\resources\SpringRestUserAutenticationResource.class
 br\com\cleanhouse\infra\http\spring\errorshandler\ErrorValidationHandler.class
 br\com\cleanhouse\core\entity\ownerhouse\AnnouncementHouseOwner.class
 br\com\cleanhouse\core\entity\enums\AcceptedPaymentsEnum.class
+br\com\cleanhouse\controller\create\UserCreateProfileController.class
 br\com\cleanhouse\core\entity\ownerhouse\HouseOwner.class
 br\com\cleanhouse\CleanHouseApplication.class
 br\com\cleanhouse\core\entity\maid\AnnouncementMaid.class
@@ -37,4 +41,4 @@ br\com\cleanhouse\infra\http\spring\resources\SourceResource.class
 br\com\cleanhouse\infra\http\spring\security\service\AccessCredentialsService.class
 br\com\cleanhouse\core\repository\UserProfileRepository.class
 br\com\cleanhouse\core\custombeansvalidations\EnumValueValidator.class
-br\com\cleanhouse\controller\UserProfileControllerImpl.class
+br\com\cleanhouse\core\exception\UserNotFoundInDataBaseException.class

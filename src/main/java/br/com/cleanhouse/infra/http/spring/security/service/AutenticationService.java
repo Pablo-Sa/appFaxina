@@ -1,7 +1,8 @@
 package br.com.cleanhouse.infra.http.spring.security.service;
 
+import br.com.cleanhouse.core.usecase.UserProfileAutenticationUseCase;
+import br.com.cleanhouse.infra.database.dynamodb.repository.UserProfileRepositoryDynamoDb;
 import br.com.cleanhouse.infra.http.spring.security.entity.AccessCredentialsEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,11 +13,10 @@ import java.util.Optional;
 @Service
 public class AutenticationService implements UserDetailsService {
 
-    @Autowired
-    private AccessCredentialsService accessCredentialsService;
+    private UserProfileAutenticationUseCase userProfileAutenticationUseCase = new UserProfileAutenticationUseCase(new UserProfileRepositoryDynamoDb());
 
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-        Optional<AccessCredentialsEntity> user = this.accessCredentialsService.findByLogin(login);
+        Optional<AccessCredentialsEntity> user = this.userProfileAutenticationUseCase.autenticationUserProfile(login);
         if(user.isPresent()) {
             return user.get();
         }

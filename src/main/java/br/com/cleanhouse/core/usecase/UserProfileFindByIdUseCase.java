@@ -8,11 +8,12 @@ import lombok.RequiredArgsConstructor;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-public class UserProfileAutenticationUseCase {
+public class UserProfileFindByIdUseCase {
 
     private final UserProfileRepository userProfileRepository;
 
-    public Optional<AccessCredentialsEntity> autenticationUserProfile(String login) throws UserNotFoundInDataBaseException {
-        return Optional.of(this.userProfileRepository.autenticationUserProfile(login));
+    public Optional<AccessCredentialsEntity> findUserProfileById(String id) throws UserNotFoundInDataBaseException {
+        return Optional.of(this.userProfileRepository.findUserProfileById(id));
     }
+
 }

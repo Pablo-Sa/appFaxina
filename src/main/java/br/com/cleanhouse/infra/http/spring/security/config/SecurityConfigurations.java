@@ -4,6 +4,7 @@ import br.com.cleanhouse.infra.http.spring.security.service.AccessCredentialsSer
 import br.com.cleanhouse.infra.http.spring.security.service.AutenticationService;
 import br.com.cleanhouse.infra.http.spring.security.service.TokenService;
 import com.google.common.collect.ImmutableList;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,23 +24,18 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @EnableWebSecurity
 @Configuration
+@RequiredArgsConstructor
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private AutenticationService autenticationService;
-
-    @Autowired
-    private TokenService tokenService;
-
-    @Autowired
-    private AccessCredentialsService accessCredentialsService;
+    private final AutenticationService autenticationService;
+    private final TokenService tokenService;
+    private final AccessCredentialsService accessCredentialsService;
 
     @Bean
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
 
-    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/registration").permitAll()
@@ -55,7 +51,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .frameOptions().sameOrigin().and().authorizeRequests().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilterBefore(new AutenticationTokenFilter(this.tokenService, this.accessCredentialsService), UsernamePasswordAuthenticationFilter.class);;
+                .addFilterAfter(new AutenticationTokenFilter(this.tokenService, this.accessCredentialsService), UsernamePasswordAuthenticationFilter.class);;
     }
 
     @Bean
@@ -79,7 +75,6 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
     }
 
-    @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**");
     }
