@@ -1,6 +1,5 @@
 package br.com.cleanhouse.core.usecase;
 
-import br.com.cleanhouse.core.exception.UserNotFoundInDataBaseException;
 import br.com.cleanhouse.core.repository.UserProfileRepository;
 import br.com.cleanhouse.infra.http.spring.security.entity.AccessCredentialsEntity;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +11,7 @@ public class UserProfileAutenticationUseCase {
 
     private final UserProfileRepository userProfileRepository;
 
-    public Optional<AccessCredentialsEntity> autenticationUserProfile(String login) throws UserNotFoundInDataBaseException {
+    public Optional<AccessCredentialsEntity> autenticationUserProfile(String login) {
         return Optional.of(this.userProfileRepository.autenticationUserProfile(login));
     }
 }
