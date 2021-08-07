@@ -1,8 +1,9 @@
 package br.com.cleanhouse.infra.http.spring.resources;
 
-import br.com.cleanhouse.infra.http.spring.dto.userprofile.autentication.UserProfileAutenticationRequestDto;
+import br.com.cleanhouse.adapter.AdapterSpringRest;
+import br.com.cleanhouse.adapter.AdapterUserProfileMapper;
+import br.com.cleanhouse.controller.fullregistration.UserFullRegistrationProfileControllerImpl;
 import br.com.cleanhouse.infra.http.spring.dto.userprofile.fullregistration.UserProfileFullRegistrationRequestDto;
-import br.com.cleanhouse.infra.http.spring.dto.userprofile.fullregistration.UserProfileFullRegistrationResponseDto;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +17,12 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class SpringRestUserFullRegistrationResource {
 
+    private final AdapterSpringRest adapterSpringRest;
+    private final AdapterUserProfileMapper adapterUserProfileMapper;
+
     @ApiOperation(value = "EndPoint Destinado ao registro completo do Usuários no App")
     @PostMapping
-    public ResponseEntity<UserProfileFullRegistrationResponseDto> userFullRegistration(@RequestBody @Valid UserProfileFullRegistrationRequestDto user) {
-        return null;
+    public ResponseEntity userFullRegistration(@RequestBody @Valid UserProfileFullRegistrationRequestDto user) {
+        return this.adapterSpringRest.fullRegistration(user, new UserFullRegistrationProfileControllerImpl(this.adapterUserProfileMapper));
     }
 }

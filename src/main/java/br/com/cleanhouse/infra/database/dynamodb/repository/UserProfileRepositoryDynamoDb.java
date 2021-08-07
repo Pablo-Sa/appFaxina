@@ -89,7 +89,7 @@ public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
 
 
     public void fullRegistratioerUserProfile(UserProfileEntity userProfileEntity) {
-
+        
 
     }
 

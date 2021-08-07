@@ -1,0 +1,11 @@
+
+v
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ì¦²‡şÿÿÿÿ8î•ö±/
+q
+java:S1128"ORemove this unused import 'br.com.cleanhouse.core.custombeansvalidations.Enum'.(ŞŒëşÿÿÿÿ8î•ö±/
+I
+java:S1128",Remove this unused import 'lombok.ToString'.(¹ÂÄÓ8‡ö±/
+a
+java:S1128"?Remove this unused import 'javax.validation.constraints.Email'.(¸àô¹üÿÿÿÿ8èÎö±/
+d
+java:S1128	"BRemove this unused import 'javax.validation.constraints.NotBlank'.(µã‡ıÿÿÿÿ8êÎö±/

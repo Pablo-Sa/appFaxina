@@ -21,10 +21,11 @@ public class SpringRestUserAutenticationResource {
 
     private final AuthenticationManager authManager;
     private final TokenService tokenService;
+    private final AdapterSpringRest adapterSpringRest;
 
     @ApiOperation(value = "EndPoint Destinado a Autenticação de Usuários no App")
     @PostMapping
     public ResponseEntity<TokenDto> userAutentication(@RequestBody @Valid UserProfileAutenticationRequestDto user) {
-        return AdapterSpringRest.autenticationUser(user,new UserAutenticationProfileControllerImpl(authManager, tokenService));
+        return this.adapterSpringRest.autenticationUser(user,new UserAutenticationProfileControllerImpl(authManager, tokenService));
     }
 }
