@@ -1,5 +1,6 @@
 package br.com.cleanhouse.infra.database.dynamodb.repository;
 
+import br.com.cleanhouse.core.entity.UserProfileEntity;
 import br.com.cleanhouse.core.exception.AlreadyExistsUserInDataBaseException;
 import br.com.cleanhouse.core.exception.UserNotFoundInDataBaseException;
 import br.com.cleanhouse.core.repository.UserProfileRepository;
@@ -66,24 +67,30 @@ public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
                 .withFilterExpression("#id = :id")
                 .withNameMap(new NameMap().with("#id", "id"))
                 .withValueMap(new ValueMap().withString(":id", id));
-        Item itemx = null;
+        Item item = null;
 
         try {
             ItemCollection<ScanOutcome> items = table.scan(scanSpec);
 
             Iterator<Item> iter = items.iterator();
             while (iter.hasNext()) {
-                itemx = iter.next();
-                itemx.toJSONPretty();
+                item = iter.next();
+                item.toJSONPretty();
             }
 
         }
         catch (Exception e) {
-            System.err.println("Unable to scan the table:");
-            System.err.println(e.getMessage());
+            log.error("Unable to scan the table:");
+            log.error(e.getMessage());
         }
         Gson gson = new Gson();
-        return gson.fromJson(itemx.toJSONPretty(),AccessCredentialsEntity.class);
+        return gson.fromJson(item.toJSONPretty(),AccessCredentialsEntity.class);
+    }
+
+
+    public void fullRegistratioerUserProfile(UserProfileEntity userProfileEntity) {
+
+
     }
 
     private void verifyExistsUserProfile(String login) {

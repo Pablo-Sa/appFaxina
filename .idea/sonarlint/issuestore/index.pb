@@ -1,7 +1,9 @@
 
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 €
-Psrc/main/java/br/com/cleanhouse/core/usecase/UserProfileRegistrationUseCase.java,6/9/6955dfefdfcb569adbd79a71a4af7e4f450d5418
-•
-esrc/main/java/br/com/cleanhouse/infra/database/dynamodb/repository/UserProfileRepositoryDynamoDb.java,e/5/e587fa6c91e2fa32feb81bf3455434c4efe5f9dc
+Psrc/main/java/br/com/cleanhouse/infra/http/spring/dto/ErrorPostExceptionDto.java,6/9/6915f7b418866b45ea4f99b20ebfaea465cb903e
+‹
+[src/main/java/br/com/cleanhouse/infra/http/spring/errorshandler/ErrorValidationHandler.java,c/7/c7e04a9b5fec6a00616c2961134b8ca60b201632
+|
+Lsrc/main/java/br/com/cleanhouse/infra/http/spring/security/dto/TokenDto.java,1/a/1a568c7825878e41a5328c84f8f2ca0e1e516e7d
+§
+wsrc/main/java/br/com/cleanhouse/infra/http/spring/dto/userprofile/autentication/UserProfileAutenticationRequestDto.java,b/d/bd771edae70e2dd5ccd985bbbaa340b2eaf77830

@@ -10,19 +10,10 @@ import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
-@ToString
 public class UserProfileEntity extends AbstractPersonEntity{
 
-    @NotBlank
     private String login;
-
-    @NotBlank
     private String password;
-
-    @Email
-    @NotBlank
     private String email;
-
-    @Enum(enumClass= TypeUserProfileEnum.class, ignoreCase=true)
     private String typeProfile;
 }

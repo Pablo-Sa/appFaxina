@@ -11,7 +11,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Getter
-@AllArgsConstructor
 public class UserProfileFullRegistrationRequestDto {
 
     @NotBlank

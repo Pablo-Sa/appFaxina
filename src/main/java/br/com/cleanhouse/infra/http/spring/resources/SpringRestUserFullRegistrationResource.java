@@ -18,7 +18,7 @@ public class SpringRestUserFullRegistrationResource {
 
     @ApiOperation(value = "EndPoint Destinado ao registro completo do Usuários no App")
     @PostMapping
-    public ResponseEntity<UserProfileFullRegistrationResponseDto> userAutentication(@RequestBody @Valid UserProfileFullRegistrationRequestDto user) {
+    public ResponseEntity<UserProfileFullRegistrationResponseDto> userFullRegistration(@RequestBody @Valid UserProfileFullRegistrationRequestDto user) {
         return null;
     }
 }
