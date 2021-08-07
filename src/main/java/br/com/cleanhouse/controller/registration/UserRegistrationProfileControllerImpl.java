@@ -1,10 +1,10 @@
-package br.com.cleanhouse.controller.create;
+package br.com.cleanhouse.controller.registration;
 
 import br.com.cleanhouse.core.usecase.UserProfileRegistrationUseCase;
 import br.com.cleanhouse.infra.database.dynamodb.repository.UserProfileRepositoryDynamoDb;
 import br.com.cleanhouse.infra.http.spring.dto.userprofile.registration.UserProfileRegistrationRequestDto;
 
-public class UserCreateProfileControllerImpl implements UserCreateProfileController<UserProfileRegistrationRequestDto> {
+public class UserRegistrationProfileControllerImpl implements UserRegistrationProfileController<UserProfileRegistrationRequestDto> {
 
     private UserProfileRegistrationUseCase userProfileRegistrationUseCase =
             new UserProfileRegistrationUseCase(new UserProfileRepositoryDynamoDb());

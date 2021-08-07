@@ -1,44 +1,45 @@
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\repository\UserProfileRepository.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\security\service\AutenticationService.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\maid\AnnouncementMaid.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\usecase\UserProfileAutenticationUseCase.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\security\config\SecurityConfigurations.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\exception\UserNotFoundInDataBaseException.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\CleanHouseApplication.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\Address.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\dto\ErrorPostExceptionDto.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\resources\SpringRestUserRegistrationResource.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\ownerhouse\HouseOwner.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\controller\create\UserCreateProfileController.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\ownerhouse\AnnouncementHouseOwner.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\errorshandler\ErrorValidationHandler.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\resources\SourceResource.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\ownerhouse\House.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\database\dynamodb\repository\UserProfileRepositoryDynamoDb.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\dto\userprofile\registration\UserProfileRegistrationResponseDto.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\exception\AlreadyExistsUserInDataBaseException.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\database\dynamodb\config\DynamoDBConfig.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\custombeansvalidations\EnumValueValidator.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\custombeansvalidations\Enum.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\maid\Maid.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\security\dto\TokenDto.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\security\config\AutenticationTokenFilter.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\swagger\SwaggerConfig.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\security\entity\ProfilesEntity.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\adapter\AdapterUserProfileDto.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\AbstractPersonEntity.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\dto\userprofile\autentication\UserProfileAutenticationRequestDto.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\resources\SpringRestUserAutenticationResource.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\security\service\AccessCredentialsService.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\dto\userprofile\registration\UserProfileRegistrationRequestDto.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\adapter\AdapterSpringRest.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\controller\autentication\UserAutenticationProfileController.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\enums\DaysOfWeekAvailableEnum.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\UserProfileEntity.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\security\entity\AccessCredentialsEntity.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\controller\create\UserCreateProfileControllerImpl.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\enums\TypeUserProfileEnum.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\entity\enums\AcceptedPaymentsEnum.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\core\usecase\UserProfileRegistrationUseCase.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\controller\autentication\UserAutenticationProfileControllerImpl.java
-C:\Users\Pablo\OneDrive\Documentos\Projetos Particulares\Clean-House\src\main\java\br\com\cleanhouse\infra\http\spring\security\service\TokenService.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/security/service/AutenticationService.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/adapter/AdapterUserProfileDto.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/AbstractPersonEntity.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/security/dto/TokenDto.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/ownerhouse/House.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/repository/UserProfileRepository.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/dto/ErrorPostExceptionDto.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/exception/AlreadyExistsUserInDataBaseException.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/Address.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/adapter/AdapterSpringRest.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/dto/userprofile/registration/UserProfileRegistrationResponseDto.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/security/config/AutenticationTokenFilter.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/security/config/SecurityConfigurations.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/controller/autentication/UserAutenticationProfileController.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/ownerhouse/AnnouncementHouseOwner.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/controller/autentication/UserAutenticationProfileControllerImpl.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/controller/create/UserCreateProfileControllerImpl.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/usecase/UserProfileFindByIdUseCase.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/custombeansvalidations/EnumValueValidator.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/custombeansvalidations/Enum.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/enums/TypeUserProfileEnum.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/database/dynamodb/config/DynamoDBConfig.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/UserProfileEntity.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/maid/AnnouncementMaid.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/resources/SpringRestUserRegistrationResource.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/CleanHouseApplication.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/enums/AcceptedPaymentsEnum.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/database/dynamodb/repository/UserProfileRepositoryDynamoDb.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/dto/userprofile/autentication/UserProfileAutenticationRequestDto.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/security/service/TokenService.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/resources/SpringRestUserAutenticationResource.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/errorshandler/ErrorValidationHandler.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/exception/UserNotFoundInDataBaseException.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/resources/SourceResource.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/ownerhouse/HouseOwner.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/enums/DaysOfWeekAvailableEnum.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/usecase/UserProfileAutenticationUseCase.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/dto/userprofile/registration/UserProfileRegistrationRequestDto.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/usecase/UserProfileRegistrationUseCase.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/controller/create/UserCreateProfileController.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/swagger/SwaggerConfig.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/security/entity/AccessCredentialsEntity.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/security/entity/ProfilesEntity.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/infra/http/spring/security/service/AccessCredentialsService.java
+/Users/pablo.sa/Documents/POC`s/appFaxina/src/main/java/br/com/cleanhouse/core/entity/maid/Maid.java

@@ -7,14 +7,14 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
-abstract public class AbstractPersonEntity {
+public abstract class AbstractPersonEntity {
+    private String login;
     private String name;
     private String surName;
     private String phoneNamber;
     private Address address;
     private String cpf;
-    private String sex;
+    private String sexo;
     private String profileFacebook;
     private TypeUserProfileEnum typeUserProfileEnum;
 }
