@@ -1,6 +1,7 @@
 package br.com.cleanhouse.infra.http.spring.errorshandler;
 
 import br.com.cleanhouse.core.exception.AlreadyExistsUserInDataBaseException;
+import br.com.cleanhouse.core.exception.UserNotAuthorizedToUpdateRegistration;
 import br.com.cleanhouse.core.exception.UserNotFoundInDataBaseException;
 import br.com.cleanhouse.infra.http.spring.dto.ErrorPostExceptionDto;
 import lombok.RequiredArgsConstructor;
@@ -56,6 +57,17 @@ public class ErrorValidationHandler {
         String fieldError = exception.getMessage();
         ErrorPostExceptionDto error = new ErrorPostExceptionDto("Error", fieldError);
         log.error("Erro Encontrado na Busca do Usuário na Base de Dados {} ", error.getField() , error.getError());
+        dto.add(error);
+        return dto;
+    }
+
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(UserNotAuthorizedToUpdateRegistration.class)
+    public List<ErrorPostExceptionDto> handle(UserNotAuthorizedToUpdateRegistration exception) {
+        List<ErrorPostExceptionDto> dto = new ArrayList<>();
+        String fieldError = exception.getMessage();
+        ErrorPostExceptionDto error = new ErrorPostExceptionDto("Error", fieldError);
+        log.error("Erro Encontrado no tentar completar Registro {} ", error.getField() , error.getError());
         dto.add(error);
         return dto;
     }

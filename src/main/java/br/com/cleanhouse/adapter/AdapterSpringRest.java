@@ -28,7 +28,7 @@ public class AdapterSpringRest {
         return methodController.execute(value);
     }
 
-    public  <T> ResponseEntity fullRegistration(T value, UserFullRegistrationProfileController<T> methodController){
+    public <T> ResponseEntity fullRegistration(T value, UserFullRegistrationProfileController<T> methodController){
         methodController.execute(value);
         return new ResponseEntity(HttpStatus.OK);
     }

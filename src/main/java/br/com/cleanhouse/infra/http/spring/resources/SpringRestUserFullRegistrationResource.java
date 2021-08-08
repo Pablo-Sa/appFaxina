@@ -4,6 +4,7 @@ import br.com.cleanhouse.adapter.AdapterSpringRest;
 import br.com.cleanhouse.adapter.AdapterUserProfileMapper;
 import br.com.cleanhouse.controller.fullregistration.UserFullRegistrationProfileControllerImpl;
 import br.com.cleanhouse.infra.http.spring.dto.userprofile.fullregistration.UserProfileFullRegistrationRequestDto;
+import br.com.cleanhouse.infra.http.spring.security.service.TokenService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,10 +20,11 @@ public class SpringRestUserFullRegistrationResource {
 
     private final AdapterSpringRest adapterSpringRest;
     private final AdapterUserProfileMapper adapterUserProfileMapper;
+    private final TokenService tokenService;
 
     @ApiOperation(value = "EndPoint Destinado ao registro completo do Usuários no App")
     @PostMapping
-    public ResponseEntity userFullRegistration(@RequestBody @Valid UserProfileFullRegistrationRequestDto user) {
-        return this.adapterSpringRest.fullRegistration(user, new UserFullRegistrationProfileControllerImpl(this.adapterUserProfileMapper));
+    public ResponseEntity userFullRegistration(@RequestBody @Valid UserProfileFullRegistrationRequestDto user, @RequestHeader("Authorization") String token) {
+        return this.adapterSpringRest.fullRegistration(user, new UserFullRegistrationProfileControllerImpl(this.adapterUserProfileMapper, this.tokenService, token));
     }
 }
