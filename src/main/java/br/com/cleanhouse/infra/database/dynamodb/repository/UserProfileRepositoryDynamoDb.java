@@ -1,23 +1,22 @@
 package br.com.cleanhouse.infra.database.dynamodb.repository;
 
+import br.com.cleanhouse.adapter.AdapterGoogleGson;
 import br.com.cleanhouse.core.entity.UserProfileEntity;
 import br.com.cleanhouse.core.exception.AlreadyExistsUserInDataBaseException;
 import br.com.cleanhouse.core.exception.UserNotFoundInDataBaseException;
 import br.com.cleanhouse.core.repository.UserProfileRepository;
 import br.com.cleanhouse.infra.database.dynamodb.config.DynamoDBConfig;
 import br.com.cleanhouse.infra.http.spring.security.entity.AccessCredentialsEntity;
-import com.amazonaws.services.dynamodbv2.document.Item;
-import com.amazonaws.services.dynamodbv2.document.ItemCollection;
-import com.amazonaws.services.dynamodbv2.document.ScanOutcome;
-import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.document.*;
 import com.amazonaws.services.dynamodbv2.document.spec.GetItemSpec;
 import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
+import com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec;
 import com.amazonaws.services.dynamodbv2.document.utils.NameMap;
 import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
 import com.amazonaws.services.dynamodbv2.model.PutItemResult;
-import com.google.gson.Gson;
+import com.amazonaws.services.dynamodbv2.model.ReturnValue;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
@@ -52,8 +51,7 @@ public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
         try {
             String jsonItem = table.getItem(spec).toJSONPretty();
             log.info("Verify Item Exists In DataBase: {}",jsonItem);
-            Gson gson = new Gson();
-            return gson.fromJson(jsonItem, AccessCredentialsEntity.class);
+            return (AccessCredentialsEntity) AdapterGoogleGson.convertStringJsonToSpecificObject(jsonItem, AccessCredentialsEntity.class);
         }catch (NullPointerException exception){
             log.info("NotFound Item in DataBase: {}");
             throw new UserNotFoundInDataBaseException("User Not Found in Data Base, Autentication Failed.");
@@ -83,13 +81,35 @@ public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
             log.error("Unable to scan the table:");
             log.error(e.getMessage());
         }
-        Gson gson = new Gson();
-        return gson.fromJson(item.toJSONPretty(),AccessCredentialsEntity.class);
+        return (AccessCredentialsEntity) AdapterGoogleGson.convertStringJsonToSpecificObject(item.toJSONPretty(),AccessCredentialsEntity.class);
     }
 
 
     public void fullRegistratioerUserProfile(UserProfileEntity userProfileEntity) {
-        
+        Table table = DynamoDBConfig.dynamoDB().getTable(TABLE_NAME);
+        String queryUpdate = "set nameProfile = :nameProfile, surName = :surName, phoneNamber = :phoneNamber, address = :address, cpf = :cpf, sex = :sex, profileFacebook = :profileFacebook";
+        UpdateItemSpec updateItemSpec = new UpdateItemSpec().withPrimaryKey(PARTITION_KEY,userProfileEntity.getLogin())
+                .withUpdateExpression(queryUpdate)
+                .withValueMap(new ValueMap()
+                        .withString(":nameProfile", userProfileEntity.getName())
+                        .withString(":surName", userProfileEntity.getSurName())
+                        .withString(":phoneNamber",userProfileEntity.getPhoneNamber())
+                        .withString(":cpf", userProfileEntity.getCpf())
+                       .withJSON(":address", AdapterGoogleGson.convertObjectToJson(userProfileEntity.getAddress()))
+                        .withString(":sex", userProfileEntity.getSexo())
+                        .withString(":profileFacebook", userProfileEntity.getProfileFacebook()))
+                .withReturnValues(ReturnValue.UPDATED_NEW);
+
+        try {
+            log.info("Updating the item...");
+            UpdateItemOutcome outcome = table.updateItem(updateItemSpec);
+            log.info("UpdateItem succeeded:\n" + outcome.getItem().toJSONPretty());
+
+        }
+        catch (Exception e) {
+            log.error("Unable to update item: {}",userProfileEntity.getLogin());
+            log.error(e.getMessage());
+        }
 
     }
 
