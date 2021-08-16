@@ -1,7 +1,0 @@
-
-{
-java:S2293$"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÿ®éÿÿÿÿÿ8ÉÌ™´/
-o
-java:S1192%"SUse already-defined constant 'PARTITION_KEY' instead of duplicating its value here.(‰Áø8µÉÌ™´/
-d
-java:S2259T"BA "NullPointerException" could be thrown; "item" is nullable here.(Ç…Ó®ÿÿÿÿÿ8ßÉÌ™´/
