@@ -16,7 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Clean-House" target="11" />
+      <module name="Clean-House" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

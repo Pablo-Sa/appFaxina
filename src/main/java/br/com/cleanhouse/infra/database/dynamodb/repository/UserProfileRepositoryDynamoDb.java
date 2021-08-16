@@ -1,12 +1,12 @@
 package br.com.cleanhouse.infra.database.dynamodb.repository;
 
 import br.com.cleanhouse.adapter.AdapterGoogleGson;
-import br.com.cleanhouse.core.entity.UserProfileEntity;
-import br.com.cleanhouse.core.exception.AlreadyExistsUserInDataBaseException;
-import br.com.cleanhouse.core.exception.UserNotFoundInDataBaseException;
+import br.com.cleanhouse.entity.UserProfileEntity;
+import br.com.cleanhouse.exception.AlreadyExistsUserInDataBaseException;
+import br.com.cleanhouse.exception.UserNotFoundInDataBaseException;
 import br.com.cleanhouse.core.repository.UserProfileRepository;
 import br.com.cleanhouse.infra.database.dynamodb.config.DynamoDBConfig;
-import br.com.cleanhouse.infra.http.spring.security.entity.AccessCredentialsEntity;
+import br.com.cleanhouse.entity.AccessCredentialsEntity;
 import com.amazonaws.services.dynamodbv2.document.*;
 import com.amazonaws.services.dynamodbv2.document.spec.GetItemSpec;
 import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
@@ -96,7 +96,7 @@ public class UserProfileRepositoryDynamoDb implements UserProfileRepository {
                         .withString(":phoneNamber",userProfileEntity.getPhoneNamber())
                         .withString(":cpf", userProfileEntity.getCpf())
                        .withJSON(":address", AdapterGoogleGson.convertObjectToJson(userProfileEntity.getAddress()))
-                        .withString(":sex", userProfileEntity.getSexo())
+                        .withString(":sex", userProfileEntity.getSex())
                         .withString(":profileFacebook", userProfileEntity.getProfileFacebook()))
                 .withReturnValues(ReturnValue.UPDATED_NEW);
 
